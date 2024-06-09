@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body { 
+        font-family: "Lora", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+
+            }
+        </style>
+</head>
+<body>
+    <header class="header-background">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <div id="logo" class="d-flex align-items-center">
+                <img src="assets/icons/e-100.png" width="70px" height="70px" alt="Logo">
+                <h2 class="ml-2">E-commerce</h2>
+            </div>
+            <div id="search" class="d-flex align-items-center">
+                <div>
+                    <i id="dropIcon" class="fas fa-chevron-down fa-2x"></i>
+                </div> 
+                <input id="searchBar" type="text" class="form-control mx-2" placeholder="Search product">
+                <i id="searchIcon" class="fas fa-search fa-2x"></i>
+            </div>
+            <div id="fca" class="d-flex align-items-center">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item favorites-container position-relative">
+                        <h4 id="favoriteCount" class="badge badge-danger position-absolute" style="top: -10px; right: 2px;">0</h4>
+                            <i id="favoriteIcon" class="fas fa-bookmark fa-2x " onclick="showFavorites();"></i>
+                            
+                            
+                          
+                    </li>
+                    <li class="list-inline-item position-relative">
+                        <h4 id="productCounter" class="badge badge-danger position-absolute" style="top: -10px; right: -10px;">0</h4>
+                        <i id="cartIcon" class="fas fa-shopping-cart fa-2x" onclick="cartBtnOnclick();"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i id="historyIcon" class="fas fa-history fa-2x" onclick="showTransactions();"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i id="profileIcon" class="fas fa-user fa-2x" onclick="showProfile();"></i>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="category-background">
+            <div class="container">
+                <ul class="nav justify-content-center" id="categoryList">
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('All')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Electronics')">Electronics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Fashion')">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Books')">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Music Instruments')">Music Instruments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Sports')">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Auto Parts')">Auto Parts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Industrial Equipment')">Industrial Equipment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts(' Art')">Art</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <br><br><br><br><br>  
+
+    <main class="container mt-5 pt-5">
+        <div id="productContainer" class="row">
+
+            
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Our Partners</h5>
+                    <ul class="list-inline">
+                        <li class="list-inline-item"><img src="assets/partners/telebirr.png" alt="tele" width="45px" height="45px"></li>
+                        <li class="list-inline-item"><img src="assets/partners/chapa.png" alt="chapa" width="45px" height="45px"></li>
+                        <li class="list-inline-item"><img src="assets/partners/santim.png" alt="santim" width="45px" height="45px"></li>
+                        <li class="list-inline-item"><img src="assets/partners/Dashen_Bank.png" alt="dashen" width="45px" height="45px"></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Information</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="javascript:void(0);">Manage Your Account</a></li>
+                        <li><a href="about-us/">About Us</a></li>
+                        <li><a href="javascript:void(0);">Terms & Conditions</a></li>
+                        <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Help & Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="javascript:void(0);">Shipping Info</a></li>
+                        <li><a href="javascript:void(0);">Refunds</a></li>
+                        <li><a href="javascript:void(0);">How to Order</a></li>
+                        <li><a href="javascript:void(0);">How to Track</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h5>Contact Us</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="javascript:void(0);">Physical Location</a></li>
+                        <li><a href="javascript:void(0);">Call Center</a></li>
+                        <li><a href="javascript:void(0);">Other Sites</a></li>
+                        <li><a href="javascript:void(0);">Mass Media</a></li>
+                    </ul>
+                </div>
+                <div class="text-center col-md-2">
+                    <ul class="list-inline">
+                        <li><img src="assets/sites/facebook-48.png" alt="F" width="40px" height="40px"></li>
+                        <li><img src="assets/sites/twitter-48.png" alt="T" width="40px" height="40px"></li>
+                        <li><img src="assets/sites/instagram-48.png" alt="I" width="40px" height="40px"></li>
+                        <li><img src="assets/sites/youtube-48.png" alt="Y" width="40px" height="40px"></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

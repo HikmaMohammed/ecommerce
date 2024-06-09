@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About E-commerce</title>
+    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+  <style>
+    /* General Styles */
+    body { 
+        font-family: "Lora", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        padding: 0;
+        margin: 0;
+
+            }
+
+/* Header Styles */
+.navbar {
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-link {
+  font-size: 1.1rem;
+  margin-left: 1.5rem;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+/* Hero Section Styles */
+.hero {
+  background-color: #f5f5f5;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  color: #666;
+}
+
+/* About Us Section Styles */
+.about-us {
+  padding: 5rem 0;
+}
+
+.about-us h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.about-us p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+/* Team Section Styles */
+.team {
+  background-color: #f5f5f5;
+  padding: 5rem 0;
+  .team {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.team-member-wrapper {
+  margin-bottom: 30px;
+}
+
+.team-member {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.team-member:hover {
+  transform: translateY(-5px);
+}
+
+.team-member-image {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.team-member-image i {
+  color: #6c757d;
+}
+
+.team-member-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-member-name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.team-member-id {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.team-member-social-links {
+  display: flex;
+  justify-content: center;
+}
+
+.team-member-social-links .social-link {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  color: #6c757d;
+  margin: 0 5px;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.team-member-social-links .social-link:hover {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .team-member-wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .team-member-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .team-member {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+}
+
+
+  </style>
+</head>
+<body>
+    <header class="header-background">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <div id="logo" class="d-flex align-items-center">
+                <img src="../assets/icons/e-100.png" width="70px" height="70px" alt="Logo">
+                <h2 class="ml-2">E-commerce</h2>
+            </div>
+            <div id="search" class="d-flex align-items-center">
+                <div>
+                    <i id="dropIcon" class="fas fa-chevron-down fa-2x"></i>
+                </div> 
+                <input id="searchBar" type="text" class="form-control mx-2" placeholder="Search product">
+                <i id="searchIcon" class="fas fa-search fa-2x"></i>
+            </div>
+            <div id="fca" class="d-flex align-items-center">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item favorites-container">
+                        
+                            <i id="favoriteIcon" class="fas fa-bookmark fa-2x " onclick="showFavorites();"></i>
+                            <span id="favoriteCount">0</span>
+                          
+                    </li>
+                    <li class="list-inline-item position-relative">
+                        <h4 id="productCounter" class="badge badge-danger position-absolute" style="top: -10px; right: -10px;">0</h4>
+                        <i id="cartIcon" class="fas fa-shopping-cart fa-2x" onclick="cartBtnOnclick();"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i id="historyIcon" class="fas fa-history fa-2x" onclick="showTransactions();"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i id="profileIcon" class="fas fa-user fa-2x" onclick="showProfile();"></i>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+        <div class="category-background">
+            <div class="container">
+                <ul class="nav justify-content-center" id="categoryList">
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('All')">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Electronics')">Electronics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Fashion')">Fashion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Books')">Books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Music Instruments')">Music Instruments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Sports')">Sports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Auto Parts')">Auto Parts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts('Industrial Equipment')">Industrial Equipment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0);" onclick="displayProducts(' Art')">Art</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <br><br><br><br><br>  
+
+  <main>
+    <section class="hero"> <div class="container"> <h1>About Our E-commerce Project</h1> <p>Learn more about our team and our mission to build a successful e-commerce website.</p> </div> </section> <section class="about-us"> <div class="container"> <div class="row"> <div class="col-lg-6"> <h2>Our Story</h2> <p>We are a group of six students from St. Mary's University working on an e-commerce website as a project. The idea for this project came from our shared passion for technology and entrepreneurship. We believe that by leveraging the power of the internet, we can create a platform that will make it easier for people to access a wide range of products and services.</p> </div> <div class="col-lg-6"> <h2>Our Mission</h2> <p>Our mission is to create an e-commerce platform that provides a seamless and enjoyable shopping experience for our customers. We aim to offer a diverse selection of high-quality products at competitive prices, while also ensuring excellent customer service and a secure payment system.</p> </div> </div> <div class="row"> <div class="col-lg-6"> <h2>Our Vision</h2> <p>Our vision is to become the leading e-commerce platform in Ethiopia, known for our commitment to customer satisfaction, innovation, and social responsibility. We want to empower local businesses and entrepreneurs to reach a wider audience and grow their operations, while also providing our customers with a one-stop-shop for all their shopping needs.</p> </div> <div class="col-lg-6"> <h2>Our Values</h2> <p>At the core of our e-commerce project are the values of integrity, excellence, and teamwork. We are committed to maintaining the highest ethical standards in our operations, and we strive to deliver exceptional products and services to our customers. Furthermore, we believe that by working together as a team, we can achieve greater success and make a positive impact on our community.</p> </div> </div> </div> </section> 
+    
+    <section class="team"> <div class="container"> <h2 class="section-title">Meet Our Team</h2> <div class="row"> <div class="col-lg-4 col-md-6 team-member-wrapper"> <div class="team-member"> <div class="team-member-image"> <i class="fas fa-female fa-5x"></i> </div> <div class="team-member-info"> <h3 class="team-member-name">Hikma MuhammedAmin</h3> <p class="team-member-id">ID: RCD/2144/2014</p> <div class="team-member-social-links"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-github"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 team-member-wrapper"> <div class="team-member"> <div class="team-member-image"> <i class="fas fa-female fa-5x"></i> </div> <div class="team-member-info"> <h3 class="team-member-name">Bethelhem Ashebir</h3> <p class="team-member-id">ID: RCD/3206/2013</p> <div class="team-member-social-links"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-github"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 team-member-wrapper"> <div class="team-member"> <div class="team-member-image"> <i class="fas fa-male fa-5x"></i> </div> <div class="team-member-info"> <h3 class="team-member-name">Nahom Yingesu</h3> <p class="team-member-id">ID: RCD/0894/2014</p> <div class="team-member-social-links"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-github"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 team-member-wrapper"> <div class="team-member"> <div class="team-member-image"> <i class="fas fa-male fa-5x"></i> </div> <div class="team-member-info"> <h3 class="team-member-name">Dagim Habtamu</h3> <p class="team-member-id">ID: RCD/0865/2014</p> <div class="team-member-social-links"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-github"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 team-member-wrapper"> <div class="team-member"> <div class="team-member-image"> <i class="fas fa-male fa-5x"></i> </div> <div class="team-member-info"> <h3 class="team-member-name">Yosef Mulugeta</h3> <p class="team-member-id">ID: RCD/0910/2014</p> <div class="team-member-social-links"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-github"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> </div> </div> </div> </div> <div class="col-lg-4 col-md-6 team-member-wrapper"> <div class="team-member"> <div class="team-member-image"> <i class="fas fa-male fa-5x"></i> </div> <div class="team-member-info"> <h3 class="team-member-name">HaileMichael Wondwessen</h3> <p class="team-member-id">ID: RCD/0874/2014</p> <div class="team-member-social-links"> <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a> <a href="#" class="social-link"><i class="fab fa-github"></i></a> <a href="#" class="social-link"><i class="fab fa-twitter"></i></a> </div> </div> </div> </div> </div> </div> </section>
+  </main>
+
+  
+  <footer class="bg-dark text-white mt-5">
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-3">
+                <h5>Our Partners</h5>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><img src="../assets/partners/telebirr.png" alt="tele" width="45px" height="45px"></li>
+                    <li class="list-inline-item"><img src="../assets/partners/chapa.png" alt="chapa" width="45px" height="45px"></li>
+                    <li class="list-inline-item"><img src="../assets/partners/santim.png" alt="santim" width="45px" height="45px"></li>
+                    <li class="list-inline-item"><img src="../assets/partners/Dashen_Bank.png" alt="dashen" width="45px" height="45px"></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Information</h5>
+                <ul class="list-unstyled">
+                    <li><a href="javascript:void(0);">Manage Your Account</a></li>
+                    <li><a href="about-us/">About Us</a></li>
+                    <li><a href="javascript:void(0);">Terms & Conditions</a></li>
+                    <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Help & Support</h5>
+                <ul class="list-unstyled">
+                    <li><a href="javascript:void(0);">Shipping Info</a></li>
+                    <li><a href="javascript:void(0);">Refunds</a></li>
+                    <li><a href="javascript:void(0);">How to Order</a></li>
+                    <li><a href="javascript:void(0);">How to Track</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2">
+                <h5>Contact Us</h5>
+                <ul class="list-unstyled">
+                    <li><a href="javascript:void(0);">Physical Location</a></li>
+                    <li><a href="javascript:void(0);">Call Center</a></li>
+                    <li><a href="javascript:void(0);">Other Sites</a></li>
+                    <li><a href="javascript:void(0);">Mass Media</a></li>
+                </ul>
+            </div>
+            <div class="text-center col-md-2">
+                <ul class="list-inline">
+                    <li><img src="../assets/sites/facebook-48.png" alt="F" width="40px" height="40px"></li>
+                    <li><img src="../assets/sites/twitter-48.png" alt="T" width="40px" height="40px"></li>
+                    <li><img src="../assets/sites/instagram-48.png" alt="I" width="40px" height="40px"></li>
+                    <li><img src="../assets/sites/youtube-48.png" alt="Y" width="40px" height="40px"></li>
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="../script.js"></script>
+
+
+ 
+</body>
+</html>
